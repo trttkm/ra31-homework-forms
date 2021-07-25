@@ -17,8 +17,7 @@ export function TeacherDashboard() {
     setForm(prev => ({
       ...prev,
       [e.target.name]: target.type === 'checkbox' ? target.checked : target.value,
-    }))
-    ;
+    }));
   };
   
   return (
@@ -51,7 +50,7 @@ export function TeacherDashboard() {
             <option value="coffeescript">coffeescript</option>
           </select>
         </div>
-
+      
       </form>
     </div>
   );

@@ -26,8 +26,7 @@ export function OlympicForm() {
     setForm(prev => ({
       ...prev,
       [e.target.name]: target.type === 'checkbox' ? target.checked : target.value,
-    }))
-    ;
+    }));
   };
   
   const onAvatarUpload = (e) => {

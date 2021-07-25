@@ -1,11 +1,14 @@
-import { OlympicForm } from './components/OlympicForm/OlympicForm';
+import React from 'react';
+import { Header } from './components/Header';
+import AppRouter from './routes/AppRouter';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <OlympicForm />
-    </div>
+    <>
+      <Header />
+      <AppRouter />
+    </>
   );
 }
 

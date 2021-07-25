@@ -1,0 +1,35 @@
+.color-container {
+  position:        absolute;
+  left:            0;
+  width:           100%;
+  height:          93%;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+}
+
+.color-container form {
+  font-size: 20px;
+}
+
+.color-container input {
+  width:          180px;
+  height:         20px;
+  padding:        15px;
+  font-size:      20px;
+  letter-spacing: 5px;
+  text-align:     center;
+}
+
+.color-container div {
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+  margin-top:       3px;
+  width:            180px;
+  height:           20px;
+  padding:          15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border:           2px solid rgba(0, 0, 0, 0.45);;
+  color:            white;
+}
