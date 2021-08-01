@@ -19,6 +19,9 @@ export function Header() {
       <Link to="/walks-list">
         <button style={headerButton}>Walks List</button>
       </Link>
+      <Link to="/photo-manager">
+        <button style={headerButton}>Walks List</button>
+      </Link>
     </header>
   );
 }
