@@ -1,4 +1,4 @@
-import './HexToRgb.css';
+import './HexToRgb.scss';
 import { useState } from 'react';
 
 export function HexToRgb() {

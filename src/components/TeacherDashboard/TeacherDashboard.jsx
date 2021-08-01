@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-const LECTIONS = ['Events, State', 'Forms'];
+// const LECTURES = ['Events, State', 'Forms'];
 
 const INITIAL_FORM_STATE = {
   name: '',
-  lection: '',
+  lecture: '',
 };
 
 export function TeacherDashboard() {
-  const [homeworks, setHomeworks] = useState([]);
+  // const [homeworks, setHomeworks] = useState([]);
   const [form, setForm] = useState(INITIAL_FORM_STATE);
   
   const onFieldChange = (e) => {

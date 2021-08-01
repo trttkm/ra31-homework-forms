@@ -13,14 +13,11 @@ export function Header() {
   
   return (
     <header>
-      <Link to="/teacher-dashboard">
-        <button style={headerButton}>TeacherDashboard</button>
-      </Link>
-      <Link to="/olympic-form">
-        <button style={headerButton}>OlympicForm</button>
-      </Link>
       <Link to="/hex-to-rgb">
         <button style={headerButton}>Hex to RGB</button>
+      </Link>
+      <Link to="/walks-list">
+        <button style={headerButton}>Walks List</button>
       </Link>
     </header>
   );

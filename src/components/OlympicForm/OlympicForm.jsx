@@ -25,7 +25,7 @@ export function OlympicForm() {
     
     setForm(prev => ({
       ...prev,
-      [e.target.name]: target.type === 'checkbox' ? target.checked : target.value,
+      [target.name]: target.type === 'checkbox' ? target.checked : target.value,
     }));
   };
   
