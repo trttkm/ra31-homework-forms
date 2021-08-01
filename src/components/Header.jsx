@@ -20,7 +20,7 @@ export function Header() {
         <button style={headerButton}>Walks List</button>
       </Link>
       <Link to="/photo-manager">
-        <button style={headerButton}>Walks List</button>
+        <button style={headerButton}>Photo Manager</button>
       </Link>
     </header>
   );
