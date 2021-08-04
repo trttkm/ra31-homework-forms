@@ -1,26 +1,26 @@
-import './PhotoManager.scss';
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import './PhotoManager.scss';
+
+function fileToDataUrl(file) {
+  console.log('render');
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    
+    fileReader.addEventListener('load', evt => {
+      resolve(evt.currentTarget.result);
+    });
+    
+    fileReader.addEventListener('error', evt => {
+      reject(new Error(evt.currentTarget.error));
+    });
+    
+    fileReader.readAsDataURL(file);
+  });
+}
 
 export function PhotoManager() {
-  
   const [urls, setUrls] = useState([]);
-  
-  const fileToDataUrl = file => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      
-      fileReader.addEventListener('load', evt => {
-        resolve(evt.currentTarget.result);
-      });
-      
-      fileReader.addEventListener('error', evt => {
-        reject(new Error(evt.currentTarget.error));
-      });
-      
-      fileReader.readAsDataURL(file);
-    });
-  };
   
   const handleSelect = async (evt) => {
     const files = [...evt.target.files];

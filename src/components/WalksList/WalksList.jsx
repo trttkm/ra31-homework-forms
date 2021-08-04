@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { FaTimes, FaPencilAlt } from 'react-icons/fa';
+
+import { WalkListForm } from './Form/WalkList-Form';
+import { WalkListHead } from './Head/WalkList-Head';
+import { WalkListTable } from './Table/WalkList-Table';
 
 import './WalksList.scss';
 
@@ -10,7 +13,6 @@ const INITIAL_FORM_STATE = {
 };
 
 export function WalksList() {
-  
   const [form, setForm] = useState(INITIAL_FORM_STATE);
   const [table, setTable] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
@@ -56,48 +58,9 @@ export function WalksList() {
   
   return (
     <div className="walk-list__container">
-      <form className="walk-list__form" onSubmit={saveData}>
-        <div className="walk-list__input-field">
-          <label htmlFor="date">Дата (ДД.MM.ГГ)</label>
-          <input
-            className="walk-list__input-field-control"
-            id="date"
-            name="date"
-            type="date"
-            value={form.date}
-            onChange={onFieldChange}
-          />
-        </div>
-        <div className="walk-list__input-field">
-          <label htmlFor="distance">Пройдено км</label>
-          <input
-            className="walk-list__input-field-control"
-            id="distance"
-            name="distance"
-            type="number"
-            value={form.distance}
-            onChange={onFieldChange}
-          />
-        </div>
-        <button className="walk-list__submit-button">OK</button>
-      </form>
-      <div className="walk-list__table-header">
-        <div>Дата (ДД.MM.ГГ)</div>
-        <div>Пройдено км</div>
-        <div>Действия</div>
-      </div>
-      <div className="walk-list__table-body">
-        {table.length ? table.map(item => (
-          <div className="walk-list__table-body-item" key={item.id}>
-            <div>{item.date.replaceAll('-', '.')}</div>
-            <div>{item.distance}</div>
-            <div>
-              <FaTimes className="icon-class" onClick={() => deleteRecord(item.id)} />
-              <FaPencilAlt className="icon-class" onClick={() => editRecord(item.id)} />
-            </div>
-          </div>
-        )) : 'Записей нет'}
-      </div>
+      <WalkListForm form={form} onFieldChange={onFieldChange} onSubmit={saveData} />
+      <WalkListHead />
+      <WalkListTable table={table} onDelete={deleteRecord} onEdit={editRecord} />
     </div>
   );
 }
